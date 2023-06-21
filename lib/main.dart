@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/services/theme_service.dart';
+import 'package:flutter_clean_architecture/theme.dart';
 import 'package:provider/provider.dart';
+
+import '3_application/core/services/theme_service.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -21,18 +23,22 @@ class CleanApp extends StatelessWidget {
           title: 'Clean App',
           themeMode:
               themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
-          theme: ThemeService.lightTheme,
-          darkTheme: ThemeService.darkTheme,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
           home: Scaffold(
-            appBar: AppBar(actions: [
-              OutlinedButton.icon(
-                onPressed: () {
-                  themeService.toggleTheme();
-                },
-                icon: const Icon(Icons.ac_unit),
-                label: const Text('Change Theme'),
-              ),
-            ]),
+            appBar: AppBar(
+                title: const Text(
+                  "Clean Architecture",
+                ),
+                actions: [
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      themeService.toggleTheme();
+                    },
+                    icon: const Icon(Icons.ac_unit),
+                    label: const Text('Change Theme'),
+                  ),
+                ]),
           ),
         );
       },
