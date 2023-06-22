@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/3_application/pages/advice/advice_page.dart';
 import 'package:flutter_clean_architecture/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -25,21 +26,7 @@ class CleanApp extends StatelessWidget {
               themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          home: Scaffold(
-            appBar: AppBar(
-                title: const Text(
-                  "Clean Architecture",
-                ),
-                actions: [
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      themeService.toggleTheme();
-                    },
-                    icon: const Icon(Icons.ac_unit),
-                    label: const Text('Change Theme'),
-                  ),
-                ]),
-          ),
+          home: const AdviserPage(),
         );
       },
     );
