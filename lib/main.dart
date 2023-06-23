@@ -26,7 +26,7 @@ class CleanApp extends StatelessWidget {
               themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          home: const AdviserPage(),
+          home: const AdviserPageWrapperProvider(),
         );
       },
     );
